@@ -208,12 +208,18 @@ class _ModifyChannelState extends State<ModifyChannel> {
       StreamBuilder(
           stream: Firestore.instance.collection('channels').snapshots(),
           builder: (context, snapshot){
-            if(!snapshot.hasData){
+            if(snapshot == null || !snapshot.hasData){
 //              _icon = Icons.cancel;
 //            setState(() {
 //              _icon = Icons.cancel;
 //            });
-              return Text('Loading data.. Please Wait..');
+              return Container(
+                child: Center(
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                  ),
+                ),
+              );
             }
 //          _icon = Icons.check_circle;
             return CupertinoScrollbar(
@@ -226,7 +232,7 @@ class _ModifyChannelState extends State<ModifyChannel> {
                         margin: EdgeInsets.all(10),
                         child: Center(
                           child: Text(
-                            'dd',
+                            'Singer Category',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15),
@@ -295,7 +301,6 @@ class _ModifyChannelState extends State<ModifyChannel> {
                                       ],
                                     ),
                                     Column(
-
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -355,85 +360,97 @@ class _ModifyChannelState extends State<ModifyChannel> {
       StreamBuilder(
           stream: Firestore.instance.collection('channels').snapshots(),
           builder: (context, snapshot){
-            if(!snapshot.hasData){
+            if(snapshot == null || !snapshot.hasData){
 //              _icon = Icons.cancel;
 //            setState(() {
 //              _icon = Icons.cancel;
 //            });
-              return Text('Loading data.. Please Wait..');
+              return Container(
+                child: Center(
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                  ),
+                ),
+              );
             }
 //          _icon = Icons.check_circle;
-            return CupertinoScrollbar(
-              child: SingleChildScrollView(
-                child: Container(
-//                  width: MediaQuery.of(context).size.width * 0.9,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.all(10),
-                        child: Center(
-                          child: Text(
-                            'dd',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15),
-                          ),
+            return Stack(
+              children: <Widget>[
+                Container(
+                height: size.height,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      child: Center(
+                        child: Text(
+                          'Guitar Category',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
                         ),
                       ),
-                      Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(0.0),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment
-                                      .spaceEvenly,
-                                  children: <Widget>[
-                                    Column(
+                    ),
+                    CupertinoScrollbar(
+                      child: SingleChildScrollView(
+                        child: Container(
+//                  width: MediaQuery.of(context).size.width * 0.9,
+                          child: Column(
+                            children: <Widget>[
+                              Card(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(0.0),
+                                    child: Column(
                                       children: <Widget>[
-                                        //E.G 1
-                                        FlatButton(child: Text(snapshot.data.documents[28]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[28].documentID);},),
-                                        //E.G 2
-                                        FlatButton(child: Text(snapshot.data.documents[29]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[29].documentID);},),
-                                        //A.G
-                                        FlatButton(child: Text(snapshot.data.documents[26]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[26].documentID);},),
-                                        //Bass
-                                        FlatButton(child: Text(snapshot.data.documents[27]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[27].documentID);},),
-                                        //spare_guitar_1
-                                        FlatButton(child: Text(snapshot.data.documents[52]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[52].documentID);},),
-                                        //spare_guitar_2
-                                        FlatButton(child: Text(snapshot.data.documents[53]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[53].documentID);},),],
-                                    ),
-                                    Column(
-                                      children: <Widget>[
-                                        //E.G 1
-                                        FlatButton(child: Text(snapshot.data.documents[2]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[2].documentID);},),
-                                        //E.G 2
-                                        FlatButton(child: Text(snapshot.data.documents[3]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[3].documentID);},),
-                                        //A.G
-                                        FlatButton(child: Text(snapshot.data.documents[0]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[0].documentID);},),
-                                        //Bass
-                                        FlatButton(child: Text(snapshot.data.documents[1]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[1].documentID);},),
-                                        //spare_guitar_1
-                                        FlatButton(child: Text(snapshot.data.documents[52]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[52].documentID);},),
-                                        //spare_guitar_2
-                                        FlatButton(child: Text(snapshot.data.documents[53]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[53].documentID);},),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        FlatButton(child: Text(snapshot.data.documents[2]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[2].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[3]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[3].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[0]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[0].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[1]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[1].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[52]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[52].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[53]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[53].documentID);},),
-                                      ],
-                                    ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment: MainAxisAlignment
+                                              .spaceEvenly,
+                                          children: <Widget>[
+                                            Column(
+                                              children: <Widget>[
+                                                //E.G 1
+                                                FlatButton(child: Text(snapshot.data.documents[28]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[28].documentID);},),
+                                                //E.G 2
+                                                FlatButton(child: Text(snapshot.data.documents[29]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[29].documentID);},),
+                                                //A.G
+                                                FlatButton(child: Text(snapshot.data.documents[26]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[26].documentID);},),
+                                                //Bass
+                                                FlatButton(child: Text(snapshot.data.documents[27]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[27].documentID);},),
+                                                //spare_guitar_1
+                                                FlatButton(child: Text(snapshot.data.documents[52]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[52].documentID);},),
+                                                //spare_guitar_2
+                                                FlatButton(child: Text(snapshot.data.documents[53]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[53].documentID);},),],
+                                            ),
+                                            Column(
+                                              children: <Widget>[
+                                                //E.G 1
+                                                FlatButton(child: Text(snapshot.data.documents[2]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[2].documentID);},),
+                                                //E.G 2
+                                                FlatButton(child: Text(snapshot.data.documents[3]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[3].documentID);},),
+                                                //A.G
+                                                FlatButton(child: Text(snapshot.data.documents[0]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[0].documentID);},),
+                                                //Bass
+                                                FlatButton(child: Text(snapshot.data.documents[1]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[1].documentID);},),
+                                                //spare_guitar_1
+                                                FlatButton(child: Text(snapshot.data.documents[52]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[52].documentID);},),
+                                                //spare_guitar_2
+                                                FlatButton(child: Text(snapshot.data.documents[53]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[53].documentID);},),
+                                              ],
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                FlatButton(child: Text(snapshot.data.documents[2]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[2].documentID);},),
+                                                FlatButton(child: Text(snapshot.data.documents[3]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[3].documentID);},),
+                                                FlatButton(child: Text(snapshot.data.documents[0]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[0].documentID);},),
+                                                FlatButton(child: Text(snapshot.data.documents[1]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[1].documentID);},),
+                                                FlatButton(child: Text(snapshot.data.documents[52]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[52].documentID);},),
+                                                FlatButton(child: Text(snapshot.data.documents[53]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[53].documentID);},),
+                                              ],
+                                            ),
 //                                Text('인도자 : ${widget.name}'),
 //                                IconButton(
 //                                  icon: Icon(
@@ -449,15 +466,19 @@ class _ModifyChannelState extends State<ModifyChannel> {
 ////                                    );
 //                                  },
 //                                )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )),
-                    ],
-                  ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
+              ),]
             );
           }
       ),
@@ -466,12 +487,18 @@ class _ModifyChannelState extends State<ModifyChannel> {
       StreamBuilder(
           stream: Firestore.instance.collection('channels').snapshots(),
           builder: (context, snapshot){
-            if(!snapshot.hasData){
+            if(snapshot == null || !snapshot.hasData){
 //              _icon = Icons.cancel;
 //            setState(() {
 //              _icon = Icons.cancel;
 //            });
-              return Text('Loading data.. Please Wait..');
+              return Container(
+                child: Center(
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                  ),
+                ),
+              );
             }
 //          _icon = Icons.check_circle;
             return CupertinoScrollbar(
@@ -484,7 +511,7 @@ class _ModifyChannelState extends State<ModifyChannel> {
                         margin: EdgeInsets.all(10),
                         child: Center(
                           child: Text(
-                            'dd',
+                            'Keys Category',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15),
@@ -571,12 +598,18 @@ class _ModifyChannelState extends State<ModifyChannel> {
       StreamBuilder(
           stream: Firestore.instance.collection('channels').snapshots(),
           builder: (context, snapshot){
-            if(!snapshot.hasData){
+            if(snapshot == null || !snapshot.hasData){
 //              _icon = Icons.cancel;
 //            setState(() {
 //              _icon = Icons.cancel;
 //            });
-              return Text('Loading data.. Please Wait..');
+              return Container(
+                child: Center(
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                  ),
+                ),
+              );
             }
 //          _icon = Icons.check_circle;
             return CupertinoScrollbar(
@@ -589,7 +622,7 @@ class _ModifyChannelState extends State<ModifyChannel> {
                         margin: EdgeInsets.all(10),
                         child: Center(
                           child: Text(
-                            'dd',
+                            'Drum Category',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15),

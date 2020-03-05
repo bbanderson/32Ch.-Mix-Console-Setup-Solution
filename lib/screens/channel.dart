@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:solution_4_setting/models/crud.dart';
 import 'package:solution_4_setting/screens/auth.dart';
+import 'package:solution_4_setting/screens/help.dart';
 
 class Channel extends StatefulWidget {
   @override
@@ -165,16 +166,6 @@ class _ChannelState extends State<Channel> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-//                      Container(
-//                        width: size.width * 0.35 * 0.3,
-//                        height: 30,
-//                        child: IconButton(
-//                          iconSize: 17,
-//                          padding: EdgeInsets.all(0),
-////                          iconSize: 17,
-//                          icon: Icon(Icons.help, color: Colors.grey[850],),
-//                        ),
-//                      ),
                       Container(
                           width: size.width * 0.35 * 0.3,
                           height: 30,
@@ -188,6 +179,19 @@ class _ChannelState extends State<Channel> {
                               setState(() {});
                             },
                           )),
+                      Container(
+                        width: size.width * 0.35 * 0.3,
+                        height: 30,
+                        child: IconButton(
+                          iconSize: 17,
+                          padding: EdgeInsets.all(0),
+//                          iconSize: 17,
+                          icon: Icon(Icons.help, color: Colors.grey[850],),
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Help()));
+                          },
+                        ),
+                      ),
 //                      Container(
 //                        width: size.width * 0.35 * 0.3,
 //                        height: 30,
@@ -579,6 +583,19 @@ class _ChannelState extends State<Channel> {
     return StreamBuilder(
         stream: Firestore.instance.collection('channels').snapshots(),
         builder: (context, snapshot) {
+          if(snapshot == null || !snapshot.hasData){
+//              _icon = Icons.cancel;
+//            setState(() {
+//              _icon = Icons.cancel;
+//            });
+            return Container(
+              child: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                ),
+              ),
+            );
+          }
           return CupertinoScrollbar(
             child: ListView(
               padding: EdgeInsets.only(
@@ -610,7 +627,7 @@ class _ChannelState extends State<Channel> {
                           onTap: () {
                             _showResult(snapshot.data.documents[25]['In'],
                                 snapshot.data.documents[25]['Out']);
-                            _returnCurrentChannel('인도자');
+                            _returnCurrentChannel(snapshot.data.documents[51]['name']);
 
                             setState(() {});
                             print('인도자 Button is clicked.');
@@ -662,7 +679,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[10]['In'],
                           snapshot.data.documents[10]['Out']);
-                      _returnCurrentChannel('Singer 1');
+                      _returnCurrentChannel(snapshot.data.documents[36]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -688,7 +705,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[12]['In'],
                           snapshot.data.documents[12]['Out']);
-                      _returnCurrentChannel('Singer 2');
+                      _returnCurrentChannel(snapshot.data.documents[38]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -714,7 +731,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[13]['In'],
                           snapshot.data.documents[13]['Out']);
-                      _returnCurrentChannel('Singer 3');
+                      _returnCurrentChannel(snapshot.data.documents[39]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -740,7 +757,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[14]['In'],
                           snapshot.data.documents[14]['Out']);
-                      _returnCurrentChannel('Singer 4');
+                      _returnCurrentChannel(snapshot.data.documents[40]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -766,7 +783,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[15]['In'],
                           snapshot.data.documents[15]['Out']);
-                      _returnCurrentChannel('Singer 5');
+                      _returnCurrentChannel(snapshot.data.documents[41]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -792,7 +809,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[16]['In'],
                           snapshot.data.documents[16]['Out']);
-                      _returnCurrentChannel('Singer 6');
+                      _returnCurrentChannel(snapshot.data.documents[42]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -818,7 +835,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[17]['In'],
                           snapshot.data.documents[17]['Out']);
-                      _returnCurrentChannel('Singer 7');
+                      _returnCurrentChannel(snapshot.data.documents[43]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -844,7 +861,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[18]['In'],
                           snapshot.data.documents[18]['Out']);
-                      _returnCurrentChannel('Singer 8');
+                      _returnCurrentChannel(snapshot.data.documents[44]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -870,7 +887,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[19]['In'],
                           snapshot.data.documents[19]['Out']);
-                      _returnCurrentChannel('Singer 9');
+                      _returnCurrentChannel(snapshot.data.documents[45]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -896,7 +913,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[11]['In'],
                           snapshot.data.documents[11]['Out']);
-                      _returnCurrentChannel('Singer 10 / A.G');
+                      _returnCurrentChannel(snapshot.data.documents[37]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1044,6 +1061,19 @@ class _ChannelState extends State<Channel> {
     return StreamBuilder(
         stream: Firestore.instance.collection('channels').snapshots(),
         builder: (context, snapshot) {
+          if(snapshot == null || !snapshot.hasData){
+//              _icon = Icons.cancel;
+//            setState(() {
+//              _icon = Icons.cancel;
+//            });
+            return Container(
+              child: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                ),
+              ),
+            );
+          }
           return CupertinoScrollbar(
             child: ListView(
               padding: EdgeInsets.all(10),
@@ -1072,7 +1102,7 @@ class _ChannelState extends State<Channel> {
                       onTap: () {
                         _showResult(snapshot.data.documents[2]['In'],
                             snapshot.data.documents[2]['Out']);
-                        _returnCurrentChannel('E.G 1');
+                        _returnCurrentChannel(snapshot.data.documents[28]['name']);
 
                         setState(() {});
                         print('E.G 1 Button is clicked.');
@@ -1099,7 +1129,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[3]['In'],
                           snapshot.data.documents[3]['Out']);
-                      _returnCurrentChannel('E.G 2');
+                      _returnCurrentChannel(snapshot.data.documents[29]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1124,7 +1154,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[1]['In'],
                           snapshot.data.documents[1]['Out']);
-                      _returnCurrentChannel('Bass');
+                      _returnCurrentChannel(snapshot.data.documents[27]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1142,7 +1172,7 @@ class _ChannelState extends State<Channel> {
 //                width: 50,
 //              ),
                     title: Text(
-                      'A.G',
+                      snapshot.data.documents[26]['name'],
                       style: TextStyle(fontSize: 20),
                     ),
                     subtitle: Text(
@@ -1152,7 +1182,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[0]['In'],
                           snapshot.data.documents[0]['Out']);
-                      _returnCurrentChannel('A.G / Singer 10');
+                      _returnCurrentChannel(snapshot.data.documents[26]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1228,6 +1258,19 @@ class _ChannelState extends State<Channel> {
     return StreamBuilder(
         stream: Firestore.instance.collection('channels').snapshots(),
         builder: (context, snapshot) {
+          if(snapshot == null || !snapshot.hasData){
+//              _icon = Icons.cancel;
+//            setState(() {
+//              _icon = Icons.cancel;
+//            });
+            return Container(
+              child: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                ),
+              ),
+            );
+          }
           return CupertinoScrollbar(
             child: ListView(
               padding: EdgeInsets.all(10),
@@ -1251,7 +1294,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[9]['In'],
                           snapshot.data.documents[9]['Out']);
-                      _returnCurrentChannel('S90ES');
+                      _returnCurrentChannel(snapshot.data.documents[35]['name']);
 
                       setState(() {});
                       print('S90ES Button is clicked.');
@@ -1277,7 +1320,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[6]['In'],
                           snapshot.data.documents[6]['Out']);
-                      _returnCurrentChannel('Motif');
+                      _returnCurrentChannel(snapshot.data.documents[32]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1303,7 +1346,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[24]['In'],
                           snapshot.data.documents[24]['Out']);
-                      _returnCurrentChannel('Triton');
+                      _returnCurrentChannel(snapshot.data.documents[50]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1378,6 +1421,19 @@ class _ChannelState extends State<Channel> {
     return StreamBuilder(
         stream: Firestore.instance.collection('channels').snapshots(),
         builder: (context, snapshot) {
+          if(snapshot == null || !snapshot.hasData){
+//              _icon = Icons.cancel;
+//            setState(() {
+//              _icon = Icons.cancel;
+//            });
+            return Container(
+              child: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                ),
+              ),
+            );
+          }
           return CupertinoScrollbar(
             child: ListView(
               padding: EdgeInsets.all(10),
@@ -1405,7 +1461,7 @@ class _ChannelState extends State<Channel> {
                       onTap: () {
                         _showResult(snapshot.data.documents[5]['In'],
                             snapshot.data.documents[5]['Out']);
-                        _returnCurrentChannel('Kick');
+                        _returnCurrentChannel(snapshot.data.documents[31]['name']);
 
                         setState(() {});
                         print('Kick Button is clicked.');
@@ -1432,7 +1488,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[20]['In'],
                           snapshot.data.documents[20]['Out']);
-                      _returnCurrentChannel('Snare');
+                      _returnCurrentChannel(snapshot.data.documents[46]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1458,7 +1514,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[4]['In'],
                           snapshot.data.documents[4]['Out']);
-                      _returnCurrentChannel('Hi-Hat');
+                      _returnCurrentChannel(snapshot.data.documents[30]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1484,7 +1540,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[21]['In'],
                           snapshot.data.documents[21]['Out']);
-                      _returnCurrentChannel('Tom 1');
+                      _returnCurrentChannel(snapshot.data.documents[47]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1510,7 +1566,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[22]['In'],
                           snapshot.data.documents[22]['Out']);
-                      _returnCurrentChannel('Tom 2');
+                      _returnCurrentChannel(snapshot.data.documents[48]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1536,7 +1592,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[23]['In'],
                           snapshot.data.documents[23]['Out']);
-                      _returnCurrentChannel('Tom 3');
+                      _returnCurrentChannel(snapshot.data.documents[49]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1562,7 +1618,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[7]['In'],
                           snapshot.data.documents[7]['Out']);
-                      _returnCurrentChannel('O.H L');
+                      _returnCurrentChannel(snapshot.data.documents[33]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();
@@ -1588,7 +1644,7 @@ class _ChannelState extends State<Channel> {
                     onTap: () {
                       _showResult(snapshot.data.documents[8]['In'],
                           snapshot.data.documents[8]['Out']);
-                      _returnCurrentChannel('O.H R');
+                      _returnCurrentChannel(snapshot.data.documents[34]['name']);
 
                       setState(
                               () {}); //                          Navigator.of(context).pop();

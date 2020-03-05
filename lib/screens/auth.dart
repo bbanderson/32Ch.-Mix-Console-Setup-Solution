@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:solution_4_setting/models/forgetPw.dart';
 import 'package:solution_4_setting/screens/modifyChannel.dart';
 
 class AuthPage extends StatefulWidget {
@@ -34,6 +36,7 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       key: _scaffoldKey,
       resizeToAvoidBottomInset: false,
       body: GestureDetector(
@@ -66,10 +69,10 @@ class _AuthPageState extends State<AuthPage> {
 //                                  color: Colors.amber,
                                   margin:
                                   EdgeInsets.only(top: size.height * 0.05),
-                                  height: size.height * 0.1,
+                                  height: size.height * 0.05,
 //                                  color: Colors.amber,
                                   child: Text(
-                                    '채널표 수정\n관리자 모드',
+                                    '채널표 수정',
                                     textAlign: TextAlign.center,
                                     textScaleFactor: 2,
                                   ),
@@ -95,6 +98,27 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                   Positioned(left: size.width * 0.01, right: size.width * 0.01,top:30,child: ShowAlert()),
+                  Positioned(
+                    left: size.width * 0.01, right: size.width * 0.01,bottom:size.height * 0.165,
+                    child: Column(
+                      children: <Widget>[
+                        _loginButton(size),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        _backButton(size),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        Container(
+                          height: size.height * 0.03,
+                          child: FlatButton(child: Text('비밀번호를 잊으셨나요?', style: TextStyle(fontSize: 10),), onPressed: (){
+                            _showForgetPwCupertinoDialog(context);
+                          },),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
@@ -115,8 +139,8 @@ class _AuthPageState extends State<AuthPage> {
           child: Container(
 //            color: Colors.pink,
             width: size.width * 0.65,
-            height: size.height * 0.53,
-            child: Scrollbar(
+            height: size.height * 0.6,
+            child: CupertinoScrollbar(
               child: Column(
 //            crossAxisAlignment: CrossAxisAlignment.center,
 //              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -127,7 +151,7 @@ class _AuthPageState extends State<AuthPage> {
                       child: Card(
                         elevation: 0,
                         child: Text(
-                          '관리자 모드에 오신 것을 환영합니다!\n보안을 위해 관리자 계정으로 로그인 해주시기 바랍니다.',
+                          '채널표 수정에 오신 것을 환영합니다!\n무분별한 수정으로 인한 혼란 방지 및 보안을 위해 부여받은 계정으로 로그인 해주시기 바랍니다.',
 //                          textAlign: TextAlign.center,
                         ),
                       )),
@@ -141,7 +165,7 @@ class _AuthPageState extends State<AuthPage> {
                           hintText: '관리자 전용 email'),
                       validator: (String value) {
                         if (value.isEmpty) {
-                          return "관리자가 아닌 것 같아요!";
+                          return "이메일을 입력해주세요!";
                         }
                         return null;
                       },
@@ -160,16 +184,11 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                     validator: (String value) {
                       if (value.isEmpty) {
-                        return "비밀번호가 틀린 것 같아요!";
+                        return "비밀번호를 입력해주세요!";
                       }
                       return null;
                     },
                   ),
-                  _loginButton(size),
-                  SizedBox(
-                    height: size.height * 0.02,
-                  ),
-                  _backButton(size),
                 ],
               ),
             ),
@@ -209,7 +228,9 @@ class _AuthPageState extends State<AuthPage> {
       width: size.width * 0.65,
       height: size.height * 0.06,
       child: RaisedButton(
-          child: Text('돌아가기'),
+          child: Text('돌아가기',
+            style: TextStyle(fontSize: 15, color: Colors.black),
+          ),
           shape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
           onPressed: () {
@@ -244,10 +265,19 @@ class _AuthPageState extends State<AuthPage> {
         _error = ema;
       });
     }
+  }
+
+  Future<Null> _showForgetPwCupertinoDialog (BuildContext context) async {
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return ForgetPw(key: _formKey);
+      },
+    );
+  }
 //    if (user.metadata == null) {
 //      _showSnackBar();
 //    }
-  }
 
   Widget ShowAlert() {
     if (_error != null) {
