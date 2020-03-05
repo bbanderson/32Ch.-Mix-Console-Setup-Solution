@@ -59,6 +59,7 @@ class _ModifyChannelState extends State<ModifyChannel> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   TextField(
+                    maxLength: 8,
                     decoration: InputDecoration(hintText: '변경 후 이름을 입력해주세요!'),
                     onChanged: (value) {
                       this.modifiedChannel = value;
@@ -506,29 +507,22 @@ class _ModifyChannelState extends State<ModifyChannel> {
                                         FlatButton(child: Text(snapshot.data.documents[35]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[35].documentID);},),
                                         //Motif
                                         FlatButton(child: Text(snapshot.data.documents[32]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[32].documentID);},),
-                                        //A.G
-                                        FlatButton(child: Text(snapshot.data.documents[26]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[26].documentID);},),
-                                        //Bass
-                                        FlatButton(child: Text(snapshot.data.documents[27]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[27].documentID);},),
-                                        //spare_guitar_1
-                                        FlatButton(child: Text(snapshot.data.documents[52]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[52].documentID);},),
-                                        //spare_guitar_2
-                                        FlatButton(child: Text(snapshot.data.documents[53]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[53].documentID);},),],
+                                        //Triton
+                                        FlatButton(child: Text(snapshot.data.documents[50]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[50].documentID);},),
+                                        //spare_key_1
+                                        FlatButton(child: Text(snapshot.data.documents[54]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[54].documentID);},),
+                                        //spare_key_2
+                                        FlatButton(child: Text(snapshot.data.documents[55]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[55].documentID);},),],
                                     ),
                                     Column(
                                       children: <Widget>[
-                                        //E.G 1
-                                        FlatButton(child: Text(snapshot.data.documents[2]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[2].documentID);},),
-                                        //E.G 2
-                                        FlatButton(child: Text(snapshot.data.documents[3]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[3].documentID);},),
-                                        //A.G
-                                        FlatButton(child: Text(snapshot.data.documents[0]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[0].documentID);},),
-                                        //Bass
-                                        FlatButton(child: Text(snapshot.data.documents[1]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[1].documentID);},),
-                                        //spare_guitar_1
-                                        FlatButton(child: Text(snapshot.data.documents[52]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[52].documentID);},),
-                                        //spare_guitar_2
-                                        FlatButton(child: Text(snapshot.data.documents[53]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[53].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[9]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[9].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[6]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[6].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[24]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[24].documentID);},),
+                                        //spare_key_1
+                                        FlatButton(child: Text(snapshot.data.documents[54]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[54].documentID);},),
+                                        //spare_key_2
+                                        FlatButton(child: Text(snapshot.data.documents[55]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[55].documentID);},),
                                       ],
                                     ),
                                     Column(
@@ -536,12 +530,13 @@ class _ModifyChannelState extends State<ModifyChannel> {
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        FlatButton(child: Text(snapshot.data.documents[2]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[2].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[3]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[3].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[0]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[0].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[1]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[1].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[52]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[52].documentID);},),
-                                        FlatButton(child: Text(snapshot.data.documents[53]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[53].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[9]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[9].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[6]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[6].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[24]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[24].documentID);},),
+                                        //spare_key_1
+                                        FlatButton(child: Text(snapshot.data.documents[54]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[54].documentID);},),
+                                        //spare_key_2
+                                        FlatButton(child: Text(snapshot.data.documents[55]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[55].documentID);},),
                                       ],
                                     ),
 //                                Text('인도자 : ${widget.name}'),
@@ -571,8 +566,131 @@ class _ModifyChannelState extends State<ModifyChannel> {
             );
           }
       ),
-      Container(),
 
+// Drum
+      StreamBuilder(
+          stream: Firestore.instance.collection('channels').snapshots(),
+          builder: (context, snapshot){
+            if(!snapshot.hasData){
+//              _icon = Icons.cancel;
+//            setState(() {
+//              _icon = Icons.cancel;
+//            });
+              return Text('Loading data.. Please Wait..');
+            }
+//          _icon = Icons.check_circle;
+            return CupertinoScrollbar(
+              child: SingleChildScrollView(
+                child: Container(
+//                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.all(10),
+                        child: Center(
+                          child: Text(
+                            'dd',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15),
+                          ),
+                        ),
+                      ),
+                      Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(0.0),
+                            child: Column(
+                              children: <Widget>[
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment
+                                      .spaceEvenly,
+                                  children: <Widget>[
+                                    Column(
+                                      children: <Widget>[
+                                        //Kick
+                                        FlatButton(child: Text(snapshot.data.documents[31]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[31].documentID);},),
+                                        //Snare
+                                        FlatButton(child: Text(snapshot.data.documents[46]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[46].documentID);},),
+                                        //Hi-Hat
+                                        FlatButton(child: Text(snapshot.data.documents[30]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[30].documentID);},),
+                                        //Tom1
+                                        FlatButton(child: Text(snapshot.data.documents[47]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[47].documentID);},),
+                                        //Tom2
+                                        FlatButton(child: Text(snapshot.data.documents[48]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[48].documentID);},),
+                                        //Tom3
+                                        FlatButton(child: Text(snapshot.data.documents[49]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[49].documentID);},),
+                                        //OH L
+                                        FlatButton(child: Text(snapshot.data.documents[33]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[33].documentID);},),
+                                        //OH R
+                                        FlatButton(child: Text(snapshot.data.documents[34]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[34].documentID);},),
+                                        //spare_drum_1
+                                        FlatButton(child: Text(snapshot.data.documents[56]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[56].documentID);},),
+                                        //spare_drum_2
+                                        FlatButton(child: Text(snapshot.data.documents[57]['name']), onPressed: (){updateDialogName(context, snapshot.data.documents[57].documentID);},),],
+                                    ),
+                                    Column(
+                                      children: <Widget>[
+                                        FlatButton(child: Text(snapshot.data.documents[5]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[5].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[20]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[20].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[4]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[4].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[21]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[21].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[22]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[22].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[23]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[23].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[7]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[7].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[8]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[8].documentID);},),
+                                        //spare_drum_1
+                                        FlatButton(child: Text(snapshot.data.documents[56]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[56].documentID);},),
+                                        //spare_drum_2
+                                        FlatButton(child: Text(snapshot.data.documents[57]['In']), onPressed: (){updateDialogIn(context, snapshot.data.documents[57].documentID);},),
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        FlatButton(child: Text(snapshot.data.documents[5]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[5].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[20]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[20].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[4]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[4].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[21]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[21].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[22]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[22].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[23]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[23].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[7]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[7].documentID);},),
+                                        FlatButton(child: Text(snapshot.data.documents[8]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[8].documentID);},),
+                                        //spare_drum_1
+                                        FlatButton(child: Text(snapshot.data.documents[56]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[56].documentID);},),
+                                        //spare_drum_2
+                                        FlatButton(child: Text(snapshot.data.documents[57]['Out']), onPressed: (){updateDialogOut(context, snapshot.data.documents[57].documentID);},),
+                                      ],
+                                    ),
+//                                Text('인도자 : ${widget.name}'),
+//                                IconButton(
+//                                  icon: Icon(
+//                                    Icons.edit,
+//                                    color: Colors.grey[850],
+//                                  ),
+//                                  iconSize: 15,
+//                                  onPressed: () {
+////                                    modifyLeaderName(context);
+////                                        .then((onValue){
+////                                      leaderName = modifyLeaderName(context).toString();
+////                                    }
+////                                    );
+//                                  },
+//                                )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }
+      ),
 
     ];
 
