@@ -38,6 +38,7 @@ class Help extends StatelessWidget {
                           padding: EdgeInsets.all(15),
                           child: Column(
                             children: <Widget>[
+                              Image.asset('assets/slide/1.png',color: Colors.amber,),
                               SizedBox(
                                 height: 10,
                               ),
@@ -61,6 +62,35 @@ class Help extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 30,),
+                        Container(
+//                            color: Colors.amber[200],
+                          padding: EdgeInsets.all(15),
+                          child: Column(
+                            children: <Widget>[
+                              Image.asset('assets/slide/2.png',color: Colors.amber, width: 200, height: 200,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                '채널 열람하기',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+
+                              Text(
+                                '메인 화면에서는 (관리자가 설정한) 장비들의 In, Out 채널 현황을 파악할 수 있습니다.\n'
+                                    '먼저 Category를 상단 바에서 선택한 후 해당 장비를 골라주세요.',
+                                style: TextStyle(height: 1.5),
+                              ),
+                              Image.asset('assets/help/1_largecategory.png', width: 200, height: 200,),
+                              SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ),
                         Container(
 //                            color: Colors.amber[200],
                           padding: EdgeInsets.all(15),

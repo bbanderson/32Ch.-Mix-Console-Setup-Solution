@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "319638804149",
+    "firebase_url": "https://settingsolution.firebaseio.com",
+    "project_id": "settingsolution",
+    "storage_bucket": "settingsolution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319638804149:android:9d397582a3059609d8d0fc",
+        "android_client_info": {
+          "package_name": "com.bbanpro.solution_4_setting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319638804149-96t0bj411kvn3s9mvr42i2jtkis6okak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfFwPKlZai2qtP1xV6-JIK8Zy4oSmwthk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319638804149-96t0bj411kvn3s9mvr42i2jtkis6okak.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "319638804149-chlhpri45ap0e1a547o3kflfsjbhf6uv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bbanpro.solution4Setting"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

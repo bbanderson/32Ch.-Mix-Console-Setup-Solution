@@ -22,6 +22,8 @@ dependencies:
   firebase_auth: 0.15.4
   cloud_firestore: 0.13.4
   auto_size_text: ^2.1.0
+  intro_views_flutter: ^2.6.0
+  shared_preferences: 0.5.6+2
 
 dependency_overrides:
   firebase_core: 0.4.4
@@ -70,6 +72,9 @@ flutter:
     - assets/icons/spare.png
     - assets/xlr_f.png
     - assets/xlr_m.png
+    - assets/slide/1.png
+    - assets/slide/2.png
+    - assets/help/1_largecategory.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

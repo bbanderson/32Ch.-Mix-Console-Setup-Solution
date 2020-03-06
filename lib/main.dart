@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:solution_4_setting/screens/channel.dart';
+import 'package:solution_4_setting/screens/intro.dart';
 
 void main() => runApp(MyApp());
 

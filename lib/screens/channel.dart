@@ -27,6 +27,19 @@ class _ChannelState extends State<Channel> {
   Color unselectedChannelColor;
   String status;
   String currentChannel;
+  int themeIndex = 0;
+  Color themeColor;
+  bool colorIndex = true;
+
+  Color defaultTheme = Colors.amber[200];
+  Color defaultFontColor = Colors.black;
+
+  Color blackModeTheme = Colors.black;
+  Color blackModeFontColor = Colors.white;
+
+  Color mainCardColor = Colors.amber[200];
+  Color mainFontColor = Colors.black;
+
 
   @override
   void initState() {
@@ -43,6 +56,7 @@ class _ChannelState extends State<Channel> {
     selectedChannelColor = null;
     status = '채널을 선택해주세요!';
     currentChannel = '';
+    themeColor = Colors.amber[200];
 
 //    crudObj.getData().then((results) {
 //      setState(() {
@@ -78,8 +92,26 @@ class _ChannelState extends State<Channel> {
     _scaffoldKey.currentState.showSnackBar(snackBar);
   }
 
+
+
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+
+//    List<Color> theme = [Colors.amber, Colors.pinkAccent, Colors.indigoAccent];
+
+//    _setColor() async {
+//      SharedPreferences myColor = await SharedPreferences.getInstance();
+//      colorIndex = (myColor.getInt('_setColor') + 1) % 3;
+//      print(colorIndex);
+//      myColor.setInt('_setColor', colorIndex);
+//    }
+
+//    _setColor().then((status) {
+////      colorIndex = (colorIndex + 1) % 3;
+//    if (status) {
+//      themeColor = theme[colorIndex];
+//    }
+//    });
 //    String _1;
 
 //    StreamBuilder(stream: Firestore.instance.collection('channels').snapshots(),
@@ -161,7 +193,7 @@ class _ChannelState extends State<Channel> {
                 width: size.width * 0.35,
                 height: 40,
                 child: Card(
-//                  color: Colors.transparent,
+                  color: Colors.transparent,
                   elevation: 0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -199,7 +231,14 @@ class _ChannelState extends State<Channel> {
 //                          iconSize: 17,
 //                          padding: EdgeInsets.all(0),
 ////                          iconSize: 17,
-//                          icon: Icon(Icons.notifications, color: Colors.grey[850],),
+//                          icon: Icon(Icons.invert_colors, color: Colors.grey[850],),
+//                          onPressed: (){
+//                            _blackMode();
+////                              colorIndex++;
+////                              _setColor();
+//                              print(themeColor);
+//                              print(colorIndex);
+//                          },
 //                        ),
 //                      ),
                     ],
@@ -387,21 +426,23 @@ class _ChannelState extends State<Channel> {
 //                ),
 //                height: size.height * 0.001,
 //              ),
-              Container(
+              Stack(
+                children: <Widget>[Container(
 //                color: Colors.black,
-                height: size.height * 0.45,
-                child: Card(
+                  height: size.height * 0.45,
+                  child: Card(
 //                  margin: EdgeInsets.all(30),
-                  color: Colors.amber[200],
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        top: 10.0, left: 10.0, right: 10.0, bottom: 10.0),
-                    child: channels[channelIndex],
+                    color: mainCardColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 10.0, left: 10.0, right: 10.0, bottom: 10.0),
+                      child: channels[channelIndex],
+                    ),
                   ),
                 ),
-              ),
+              ]),
               SizedBox(
                 child: Container(
 //                  color: Colors.grey[300],
@@ -431,7 +472,7 @@ class _ChannelState extends State<Channel> {
                         children: <Widget>[
                           Text(
                             'INPUT\n(롤에 꽂는 그림)',
-                            style: TextStyle(),
+                            style: TextStyle(color: mainFontColor),
                             textAlign: TextAlign.center,
                           ),
                           Container(
@@ -447,10 +488,11 @@ class _ChannelState extends State<Channel> {
                                   Text(
                                     input,
                                     textAlign: TextAlign.center,
+                                    style: TextStyle(color:mainFontColor),
                                   ),
                                 ],
                               ),
-                              color: Colors.amber[200],
+                              color: mainCardColor,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)),
                             ),
@@ -484,7 +526,7 @@ class _ChannelState extends State<Channel> {
                         children: <Widget>[
                           Text(
                             'MONITOR\n(롤에 꽂는 그림)',
-                            style: TextStyle(),
+                            style: TextStyle(color: mainFontColor),
                             textAlign: TextAlign.center,
                           ),
                           Container(
@@ -495,10 +537,11 @@ class _ChannelState extends State<Channel> {
                                   Text(
                                     monitor,
                                     textAlign: TextAlign.center,
+                                    style: TextStyle(color:mainFontColor),
                                   ),
                                 ],
                               ),
-                              color: Colors.amber[200],
+                              color: mainCardColor,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)),
                             ),
@@ -1080,7 +1123,7 @@ class _ChannelState extends State<Channel> {
               scrollDirection: Axis.vertical,
               children: <Widget>[
                 Container(
-                  color: selectedChannelColor,
+//                    color: Colors.white,
                   child: ListTile(
                       leading: Image.asset(
                         'assets/icons/eg1.png',
@@ -1109,143 +1152,158 @@ class _ChannelState extends State<Channel> {
                       }),
                 ),
 //                    Divider(),
-                ListTile(
-                    leading: Image.asset(
-                      'assets/icons/eg2.png',
-                      width: 28,
-                      height: 28,
-                      color: Colors.grey[850],
-                    ),
+                Container(
+//                    color: Colors.white,
+                  child: ListTile(
+                      leading: Image.asset(
+                        'assets/icons/eg2.png',
+                        width: 28,
+                        height: 28,
+                        color: Colors.grey[850],
+                      ),
 //              trailing: Image.asset(
 //                'assets/loading.gif',
 //                height: 50,
 //                width: 50,
 //              ),
-                    title: Text(
-                      snapshot.data.documents[29]['name'],
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    subtitle: Text('Mic : SM57'),
-                    onTap: () {
-                      _showResult(snapshot.data.documents[3]['In'],
-                          snapshot.data.documents[3]['Out']);
-                      _returnCurrentChannel(snapshot.data.documents[29]['name']);
+                      title: Text(
+                        snapshot.data.documents[29]['name'],
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      subtitle: Text('Mic : SM57'),
+                      onTap: () {
+                        _showResult(snapshot.data.documents[3]['In'],
+                            snapshot.data.documents[3]['Out']);
+                        _returnCurrentChannel(snapshot.data.documents[29]['name']);
 
-                      setState(
-                              () {}); //                          Navigator.of(context).pop();
-                      print('E.G 2 Button is clicked.');
-                    }),
-                ListTile(
-                    leading: Image.asset(
-                      'assets/icons/bass.png',
-                      width: 33,
-                      height: 33,
-                    ),
+                        setState(
+                                () {}); //                          Navigator.of(context).pop();
+                        print('E.G 2 Button is clicked.');
+                      }),
+                ),
+                Container(
+//                    color: Colors.white,
+                  child: ListTile(
+                      leading: Image.asset(
+                        'assets/icons/bass.png',
+                        width: 33,
+                        height: 33,
+                      ),
 //              trailing: Image.asset(
 //                'assets/loading.gif',
 //                height: 50,
 //                width: 50,
 //              ),
-                    title: Text(
-                      snapshot.data.documents[27]['name'],
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    subtitle: Text('Connect to amp'),
-                    onTap: () {
-                      _showResult(snapshot.data.documents[1]['In'],
-                          snapshot.data.documents[1]['Out']);
-                      _returnCurrentChannel(snapshot.data.documents[27]['name']);
+                      title: Text(
+                        snapshot.data.documents[27]['name'],
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      subtitle: Text('Connect to amp'),
+                      onTap: () {
+                        _showResult(snapshot.data.documents[1]['In'],
+                            snapshot.data.documents[1]['Out']);
+                        _returnCurrentChannel(snapshot.data.documents[27]['name']);
 
-                      setState(
-                              () {}); //                          Navigator.of(context).pop();
-                      print('Bass Button is clicked.');
-                    }),
-                ListTile(
-                    leading: Image.asset(
-                      'assets/icons/ag.png',
-                      width: 33,
-                      height: 33,
-                    ),
+                        setState(
+                                () {}); //                          Navigator.of(context).pop();
+                        print('Bass Button is clicked.');
+                      }),
+                ),
+                Container(
+//                    color: Colors.white,
+                  child: ListTile(
+                      leading: Image.asset(
+                        'assets/icons/ag.png',
+                        width: 33,
+                        height: 33,
+                      ),
 //              trailing: Image.asset(
 //                'assets/loading.gif',
 //                height: 50,
 //                width: 50,
 //              ),
-                    title: Text(
-                      snapshot.data.documents[26]['name'],
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    subtitle: Text(
-                      '사용자 있을 시 결정',
+                      title: Text(
+                        snapshot.data.documents[26]['name'],
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      subtitle: Text(
+                        '사용자 있을 시 결정',
 //                style: TextStyle(fontSize: 10),
-                    ),
-                    onTap: () {
-                      _showResult(snapshot.data.documents[0]['In'],
-                          snapshot.data.documents[0]['Out']);
-                      _returnCurrentChannel(snapshot.data.documents[26]['name']);
+                      ),
+                      onTap: () {
+                        _showResult(snapshot.data.documents[0]['In'],
+                            snapshot.data.documents[0]['Out']);
+                        _returnCurrentChannel(snapshot.data.documents[26]['name']);
 
-                      setState(
-                              () {}); //                          Navigator.of(context).pop();
-                      print('A.G / Singer 10 Button is clicked.');
-                    }),
-                ListTile(
-                    leading: Image.asset(
-                      'assets/icons/spare.png',
-                      width: 33,
-                      height: 33,
-                      color: Colors.grey[850],
-                    ),
+                        setState(
+                                () {}); //                          Navigator.of(context).pop();
+                        print('A.G / Singer 10 Button is clicked.');
+                      }),
+                ),
+                Container(
+//                    color: Colors.white,
+                  child: ListTile(
+                      leading: Image.asset(
+                        'assets/icons/spare.png',
+                        width: 33,
+                        height: 33,
+                        color: Colors.grey[850],
+                      ),
 //              trailing: Image.asset(
 //                'assets/loading.gif',
 //                height: 50,
 //                width: 50,
 //              ),
-                    title: Text(
-                      snapshot.data.documents[52]['name'],
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    subtitle: Text(
-                      '추가해서 사용하세요.',
+                      title: Text(
+                        snapshot.data.documents[52]['name'],
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      subtitle: Text(
+                        '추가해서 사용하세요.',
 //                style: TextStyle(fontSize: 10),
-                    ),
-                    onTap: () {
-                      _showResult(snapshot.data.documents[52]['In'],
-                          snapshot.data.documents[52]['Out']);
-                      _returnCurrentChannel(snapshot.data.documents[52]['name']);
+                      ),
+                      onTap: () {
+                        _showResult(snapshot.data.documents[52]['In'],
+                            snapshot.data.documents[52]['Out']);
+                        _returnCurrentChannel(snapshot.data.documents[52]['name']);
 
-                      setState(
-                              () {}); //                          Navigator.of(context).pop();
-                      print('spare_guitar_1 Button is clicked.');
-                    }),
-                ListTile(
-                    leading: Image.asset(
-                      'assets/icons/spare.png',
-                      width: 33,
-                      height: 33,
-                      color: Colors.grey[850],
-                    ),
+                        setState(
+                                () {}); //                          Navigator.of(context).pop();
+                        print('spare_guitar_1 Button is clicked.');
+                      }),
+                ),
+                Container(
+//                    color: Colors.white,
+                  child: ListTile(
+                      leading: Image.asset(
+                        'assets/icons/spare.png',
+                        width: 33,
+                        height: 33,
+                        color: Colors.grey[850],
+                      ),
 //              trailing: Image.asset(
 //                'assets/loading.gif',
 //                height: 50,
 //                width: 50,
 //              ),
-                    title: Text(
-                      snapshot.data.documents[53]['name'],
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    subtitle: Text(
-                      '추가해서 사용하세요.',
+                      title: Text(
+                        snapshot.data.documents[53]['name'],
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      subtitle: Text(
+                        '추가해서 사용하세요.',
 //                style: TextStyle(fontSize: 10),
-                    ),
-                    onTap: () {
-                      _showResult(snapshot.data.documents[53]['In'],
-                          snapshot.data.documents[53]['Out']);
-                      _returnCurrentChannel(snapshot.data.documents[53]['name']);
+                      ),
+                      onTap: () {
+                        _showResult(snapshot.data.documents[53]['In'],
+                            snapshot.data.documents[53]['Out']);
+                        _returnCurrentChannel(snapshot.data.documents[53]['name']);
 
-                      setState(
-                              () {}); //                          Navigator.of(context).pop();
-                      print('A.G / Singer 10 Button is clicked.');
-                    }),
+                        setState(
+                                () {}); //                          Navigator.of(context).pop();
+                        print('A.G / Singer 10 Button is clicked.');
+                      }),
+                ),
               ],
 //              magnification: 2,
               itemExtent: 60.0,
@@ -1714,5 +1772,24 @@ class _ChannelState extends State<Channel> {
           );
         });
   }
+
+
+  void _blackMode() {
+    colorIndex = !colorIndex;
+    if (!colorIndex) {
+      setState(() {
+        mainFontColor = defaultFontColor;
+        mainCardColor = defaultTheme;
+      });
+    }
+    else {
+      setState(() {
+        mainFontColor = defaultFontColor;
+        mainCardColor = defaultTheme;
+      });
+    }
+  }
+
+
 }
 
