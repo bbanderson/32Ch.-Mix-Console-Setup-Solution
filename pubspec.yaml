@@ -76,6 +76,25 @@ flutter:
     - assets/slide/1.png
     - assets/slide/2.png
     - assets/help/1_largecategory.png
+    - assets/help/1_init.png
+    - assets/help/2_drum.png
+    - assets/help/3_kick.png
+    - assets/help/4_spare.png
+    - assets/help/5_loginmessage.png
+    - assets/help/6_login.png
+    - assets/help/7_forgetpw.png
+    - assets/help/8_sent.png
+    - assets/help/mod/1_init.png
+    - assets/help/mod/2_drum.png
+    - assets/help/mod/3_name.png
+    - assets/help/mod/4_named.png
+    - assets/help/mod/5_changed.png
+    - assets/help/mod/6_input.png
+    - assets/help/mod/7_named.png
+    - assets/help/mod/8_changed.png
+    - assets/help/mod/9_changed.png
+    - assets/help/mod/10_logout.png
+    - assets/help/mod/11_finished.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

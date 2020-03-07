@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:solution_4_setting/models/crud.dart';
 import 'package:solution_4_setting/screens/auth.dart';
 import 'package:solution_4_setting/screens/help.dart';
+import 'package:solution_4_setting/screens/intro.dart';
 
 class Channel extends StatefulWidget {
   @override

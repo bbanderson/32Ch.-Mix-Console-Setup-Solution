@@ -89,7 +89,7 @@ class _IntroState extends State<Intro> with TickerProviderStateMixin{
         .of(context)
         .size;
 
-    return Stack(children: <Widget>[
+    return
       MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'qn'),
@@ -97,10 +97,11 @@ class _IntroState extends State<Intro> with TickerProviderStateMixin{
           builder: (context) =>
               IntroViewsFlutter(
                 pages,
+                showSkipButton: true,
+                skipText: Text('나가기', style: TextStyle(color: Colors.black),),
                 onTapDoneButton: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Channel()));
+//                  Navigator.of(context).pop(context);
+
                 },
               ),
 //        body: Column(
@@ -120,17 +121,6 @@ class _IntroState extends State<Intro> with TickerProviderStateMixin{
 //          ],
 //        ),
         ),
-      ),
-      Center(
-        child: Container(
-          width: size.width * 0.3,
-          height: size.height * 0.3,
-          color: Colors.redAccent,
-          child: Transform.rotate(
-            angle: 45 / 360 * pi * 2,
-            child: Image.asset('assets/slide/1.png', color: Colors.amber,),),
-        ),
-      )
-    ]);
+      );
   }
 }

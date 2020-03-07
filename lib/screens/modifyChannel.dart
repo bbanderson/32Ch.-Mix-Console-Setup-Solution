@@ -76,7 +76,7 @@ class _ModifyChannelState extends State<ModifyChannel> {
                         }
                         return null;
                       },
-                      maxLength: 8,
+                      maxLength: 16,
                       decoration: InputDecoration(hintText: '변경 후 이름을 입력해주세요!'),
                       onChanged: (value) {
                         this.modifiedChannel = value;
@@ -138,7 +138,7 @@ class _ModifyChannelState extends State<ModifyChannel> {
                       }
                       return null;
                     },
-                    maxLength: 10,
+                    maxLength: 16,
                     decoration: InputDecoration(hintText: 'ex: n채널 n번'),
                 onChanged: (value) {
                   this.modifiedChannel = value;
@@ -202,7 +202,7 @@ class _ModifyChannelState extends State<ModifyChannel> {
                         }
                         return null;
                       },
-                      maxLength: 10,
+                      maxLength: 16,
                       decoration: InputDecoration(hintText: 'ex: n채널 n번'),
                       onChanged: (value) {
                         this.modifiedChannel = value;
@@ -1867,19 +1867,19 @@ class _ModifyChannelState extends State<ModifyChannel> {
             _confirmLogout(context);
           },),
           title: Text('채널 수정하기'),
-          actions: <Widget>[
-//            Icon(_icon),
-            IconButton(icon: Icon(Icons.help, color: Colors.grey[850],),
-              onPressed: () {
-                crudObj.getData().then((results) {
-                  setState(() {
-//                crudObj = results;
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HelpForModCh()));
-                  });
-                });
-              },),
-            SizedBox(width: 10,),
-          ],
+//          actions: <Widget>[
+////            Icon(_icon),
+//            IconButton(icon: Icon(Icons.help, color: Colors.grey[850],),
+//              onPressed: () {
+//                crudObj.getData().then((results) {
+//                  setState(() {
+////                crudObj = results;
+//                  Navigator.push(context, MaterialPageRoute(builder: (context) => HelpForModCh()));
+//                  });
+//                });
+//              },),
+//            SizedBox(width: 10,),
+//          ],
         ),
         body: IndexedStack(
           index: _selectedIndex,
