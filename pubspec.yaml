@@ -24,6 +24,7 @@ dependencies:
   auto_size_text: ^2.1.0
   intro_views_flutter: ^2.6.0
   shared_preferences: 0.5.6+2
+  font_awesome_flutter: ^8.2.0
 
 dependency_overrides:
   firebase_core: 0.4.4

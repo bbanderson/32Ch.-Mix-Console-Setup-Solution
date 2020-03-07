@@ -1,8 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:solution_4_setting/models/confirmLogOut.dart';
 import 'package:solution_4_setting/models/crud.dart';
+import 'package:solution_4_setting/screens/helpForModCh.dart';
 
 class ModifyChannel extends StatefulWidget {
   ModifyChannel({this.email});
@@ -1859,17 +1863,22 @@ class _ModifyChannelState extends State<ModifyChannel> {
 
             ]),
         appBar: AppBar(
+          leading: IconButton(icon: FaIcon(FontAwesomeIcons.powerOff), onPressed: (){
+            _confirmLogout(context);
+          },),
           title: Text('채널 수정하기'),
           actions: <Widget>[
-            Icon(_icon),
-            IconButton(icon: Icon(Icons.refresh, color: Colors.grey[850],),
+//            Icon(_icon),
+            IconButton(icon: Icon(Icons.help, color: Colors.grey[850],),
               onPressed: () {
                 crudObj.getData().then((results) {
                   setState(() {
 //                crudObj = results;
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HelpForModCh()));
                   });
                 });
-              },)
+              },),
+            SizedBox(width: 10,),
           ],
         ),
         body: IndexedStack(
@@ -2062,6 +2071,15 @@ class _ModifyChannelState extends State<ModifyChannel> {
 //                ],
 //              ),
         ));
+  }
+
+  Future<Null> _confirmLogout (BuildContext context) async {
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return ConfirmLogOut();
+      },
+    );
   }
 }
 

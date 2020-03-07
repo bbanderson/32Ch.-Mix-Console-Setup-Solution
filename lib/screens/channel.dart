@@ -153,6 +153,8 @@ class _ChannelState extends State<Channel> {
 //        else
     return Scaffold(
       key: _scaffoldKey,
+      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         titleSpacing: size.width * 0.0001,
@@ -430,16 +432,27 @@ class _ChannelState extends State<Channel> {
                 children: <Widget>[Container(
 //                color: Colors.black,
                   height: size.height * 0.45,
-                  child: Card(
+                  child: Stack(
+                    children: <Widget>[
+//                      Container(color: Colors.black,),
+                      Center(
+                        child: Card(
 //                  margin: EdgeInsets.all(30),
-                    color: mainCardColor,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 10.0, left: 10.0, right: 10.0, bottom: 10.0),
-                      child: channels[channelIndex],
+                        color: mainCardColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 10.0, left: 10.0, right: 10.0, bottom: 10.0),
+                          child: Container(width: size.width , height: size.height , color: Colors.white,),
+                        ),
                     ),
+                      ),
+                      Padding(
+                        child: channels[channelIndex],
+                        padding: const EdgeInsets.all(15),
+                      ),
+                    ]
                   ),
                 ),
               ]),
