@@ -267,12 +267,13 @@ class _ModifyChannelState extends State<ModifyChannel> {
               );
             }
 //          _icon = Icons.check_circle;
-            return CupertinoScrollbar(
-              child: SingleChildScrollView(
-                child: Container(
+            return Center(
+              child: CupertinoScrollbar(
+                child: SingleChildScrollView(
+                  child: Container(
 //                  width: MediaQuery.of(context).size.width * 0.9,
-                  child: Column(
-                    children: <Widget>[
+                    child: Column(
+                      children: <Widget>[
 //                      Row(children: <Widget>[
 //                        RaisedButton(child:Text('In'), onPressed: (){
 //                          for (int i=0;i<26;i++){
@@ -287,426 +288,437 @@ class _ModifyChannelState extends State<ModifyChannel> {
 //                        },
 //                        )
 //                      ],),
-                      Container(
-                        margin: EdgeInsets.all(10),
-                        child: Center(
-                          child: Text(
-                            'Singer Category',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: Center(
+                            child: Text(
+                              'Singer Category',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: (MediaQuery.of(context).size.width>1000)?30:15),
+                            ),
                           ),
                         ),
-                      ),
-                      Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(0.0),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment
-                                      .spaceEvenly,
-                                  children: <Widget>[
-                                    Column(
-                                      children: <Widget>[
-                                        //Leader
-                                        Container(
+                        Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(0.0),
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment
+                                        .spaceEvenly,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          //Leader
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[51]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[51]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[36]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[36]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[38]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[38]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S3
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[39]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[39]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S4
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[40]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[40]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S5
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[41]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[41]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S6
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[42]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[42]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S7
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[43]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[43]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S8
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data.documents[44]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[44]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S9
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[45]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[45]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S10
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[37]['name'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[37]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: <Widget>[
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[25]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[25]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[10]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[10]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[12]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[12]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S3
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[13]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[13]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S4
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[14]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[14]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S5
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[15]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[15]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S6
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[16]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[16]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S7
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[17]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[17]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S8
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[18]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[18]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S9
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[19]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[19]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S10
+                                          Container(
+                                            width : size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[11]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[11]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment: MainAxisAlignment
+                                            .start,
+                                        crossAxisAlignment: CrossAxisAlignment
+                                            .start,
+                                        children: <Widget>[
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[25]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[25]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S1
+                                          Container(
                                           width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[51]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[51]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[36]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[36]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[38]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[38]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S3
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[39]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[39]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S4
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[40]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[40]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S5
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[41]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[41]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S6
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[42]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[42]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S7
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[43]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[43]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S8
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data.documents[44]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[44]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S9
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[45]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[45]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S10
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[37]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[37]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      children: <Widget>[
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[25]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[25]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[10]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[10]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[12]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[12]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S3
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[13]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[13]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S4
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[14]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[14]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S5
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[15]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[15]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S6
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[16]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[16]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S7
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[17]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[17]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S8
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[18]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[18]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S9
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[19]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[19]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S10
-                                        Container(
-                                          width : size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[11]['In'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[11]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment
-                                          .start,
-                                      crossAxisAlignment: CrossAxisAlignment
-                                          .start,
-                                      children: <Widget>[
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[25]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[25]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S1
-                                        Container(
-                                        width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[10]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[10]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[12]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[12]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S3
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[13]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[13]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S4
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[14]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[14]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S5
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[15]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[15]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S6
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[16]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[16]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S7
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[17]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[17]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S8
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[18]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[18]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S9
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[19]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[19]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //S10
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                            snapshot.data.documents[11]['Out'],
-                                            textScaleFactor: 0.9,),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[11]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[10]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[10]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[12]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[12]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S3
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[13]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[13]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S4
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[14]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[14]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S5
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[15]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[15]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S6
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[16]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[16]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S7
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[17]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[17]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S8
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[18]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[18]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S9
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[19]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[19]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //S10
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                              snapshot.data.documents[11]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[11]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
 //                                Text('인도자 : ${widget.name}'),
 //                                IconButton(
 //                                  icon: Icon(
@@ -722,12 +734,13 @@ class _ModifyChannelState extends State<ModifyChannel> {
 ////                                    );
 //                                  },
 //                                )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )),
-                    ],
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            )),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -753,10 +766,11 @@ class _ModifyChannelState extends State<ModifyChannel> {
               );
             }
 //          _icon = Icons.check_circle;
-            return Stack(
-                children: <Widget>[
-                  Container(
-                    height: size.height,
+            return Center(
+              child: CupertinoScrollbar(
+                child: SingleChildScrollView(
+                  child: Container(
+//                  width: MediaQuery.of(context).size.width * 0.9,
                     child: Column(
                       children: <Widget>[
                         Container(
@@ -766,278 +780,290 @@ class _ModifyChannelState extends State<ModifyChannel> {
                               'Guitar Category',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 15),
+                                  fontSize: (MediaQuery.of(context).size.width>1000)?30:15),
                             ),
                           ),
                         ),
-                        CupertinoScrollbar(
-                          child: SingleChildScrollView(
-                            child: Container(
-//                  width: MediaQuery.of(context).size.width * 0.9,
+                        Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(0.0),
                               child: Column(
                                 children: <Widget>[
-                                  Card(
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(0.0),
-                                        child: Column(
-                                          children: <Widget>[
-                                            Row(
-                                              mainAxisSize: MainAxisSize.min,
-                                              mainAxisAlignment: MainAxisAlignment
-                                                  .spaceEvenly,
-                                              children: <Widget>[
-                                                Column(
-                                                  children: <Widget>[
-                                                    //E.G 1
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[28]['name']),
-                                                        onPressed: () {
-                                                          updateDialogName(
-                                                              context,
-                                                              snapshot.data
-                                                                  .documents[28]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //E.G 2
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[29]['name']),
-                                                        onPressed: () {
-                                                          updateDialogName(
-                                                              context,
-                                                              snapshot.data
-                                                                  .documents[29]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //A.G
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[26]['name']),
-                                                        onPressed: () {
-                                                          updateDialogName(
-                                                              context,
-                                                              snapshot.data
-                                                                  .documents[26]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //Bass
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[27]['name']),
-                                                        onPressed: () {
-                                                          updateDialogName(
-                                                              context,
-                                                              snapshot.data
-                                                                  .documents[27]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //spare_guitar_1
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[52]['name']),
-                                                        onPressed: () {
-                                                          updateDialogName(
-                                                              context,
-                                                              snapshot.data
-                                                                  .documents[52]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //spare_guitar_2
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[53]['name']),
-                                                        onPressed: () {
-                                                          updateDialogName(
-                                                              context,
-                                                              snapshot.data
-                                                                  .documents[53]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  children: <Widget>[
-                                                    //E.G 1
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[2]['In']),
-                                                        onPressed: () {
-                                                          updateDialogIn(context,
-                                                              snapshot.data
-                                                                  .documents[2]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //E.G 2
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[3]['In']),
-                                                        onPressed: () {
-                                                          updateDialogIn(context,
-                                                              snapshot.data
-                                                                  .documents[3]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //A.G
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[0]['In']),
-                                                        onPressed: () {
-                                                          updateDialogIn(context,
-                                                              snapshot.data
-                                                                  .documents[0]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //Bass
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[1]['In']),
-                                                        onPressed: () {
-                                                          updateDialogIn(context,
-                                                              snapshot.data
-                                                                  .documents[1]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //spare_guitar_1
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[52]['In']),
-                                                        onPressed: () {
-                                                          updateDialogIn(context,
-                                                              snapshot.data
-                                                                  .documents[52]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    //spare_guitar_2
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[53]['In']),
-                                                        onPressed: () {
-                                                          updateDialogIn(context,
-                                                              snapshot.data
-                                                                  .documents[53]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize: MainAxisSize
-                                                      .min,
-                                                  mainAxisAlignment: MainAxisAlignment
-                                                      .start,
-                                                  crossAxisAlignment: CrossAxisAlignment
-                                                      .start,
-                                                  children: <Widget>[
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[2]['Out']),
-                                                        onPressed: () {
-                                                          updateDialogOut(context,
-                                                              snapshot.data
-                                                                  .documents[2]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[3]['Out']),
-                                                        onPressed: () {
-                                                          updateDialogOut(context,
-                                                              snapshot.data
-                                                                  .documents[3]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[0]['Out']),
-                                                        onPressed: () {
-                                                          updateDialogOut(context,
-                                                              snapshot.data
-                                                                  .documents[0]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[1]['Out']),
-                                                        onPressed: () {
-                                                          updateDialogOut(context,
-                                                              snapshot.data
-                                                                  .documents[1]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[52]['Out']),
-                                                        onPressed: () {
-                                                          updateDialogOut(context,
-                                                              snapshot.data
-                                                                  .documents[52]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                    Container(
-                                                      width: size.width * 0.25,
-                                                      child: FlatButton(child: Text(
-                                                          snapshot.data
-                                                              .documents[53]['Out']),
-                                                        onPressed: () {
-                                                          updateDialogOut(context,
-                                                              snapshot.data
-                                                                  .documents[53]
-                                                                  .documentID);
-                                                        },),
-                                                    ),
-                                                  ],
-                                                ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment
+                                        .spaceEvenly,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          //E.G 1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[28]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(
+                                                    context,
+                                                    snapshot.data
+                                                        .documents[28]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //E.G 2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[29]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(
+                                                    context,
+                                                    snapshot.data
+                                                        .documents[29]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //A.G
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[26]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(
+                                                    context,
+                                                    snapshot.data
+                                                        .documents[26]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Bass
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[27]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(
+                                                    context,
+                                                    snapshot.data
+                                                        .documents[27]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_guitar_1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[52]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(
+                                                    context,
+                                                    snapshot.data
+                                                        .documents[52]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_guitar_2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[53]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(
+                                                    context,
+                                                    snapshot.data
+                                                        .documents[53]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: <Widget>[
+                                          //E.G 1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[2]['In'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data
+                                                        .documents[2]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //E.G 2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[3]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data
+                                                        .documents[3]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //A.G
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[0]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data
+                                                        .documents[0]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Bass
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[1]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data
+                                                        .documents[1]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_guitar_1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[52]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data
+                                                        .documents[52]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_guitar_2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[53]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data
+                                                        .documents[53]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize
+                                            .min,
+                                        mainAxisAlignment: MainAxisAlignment
+                                            .start,
+                                        crossAxisAlignment: CrossAxisAlignment
+                                            .start,
+                                        children: <Widget>[
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[2]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data
+                                                        .documents[2]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[3]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data
+                                                        .documents[3]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[0]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data
+                                                        .documents[0]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[1]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data
+                                                        .documents[1]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[52]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data
+                                                        .documents[52]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data
+                                                    .documents[53]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data
+                                                        .documents[53]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
 //                                Text('인도자 : ${widget.name}'),
 //                                IconButton(
 //                                  icon: Icon(
@@ -1053,20 +1079,16 @@ class _ModifyChannelState extends State<ModifyChannel> {
 ////                                    );
 //                                  },
 //                                )
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      )),
+                                    ],
+                                  ),
                                 ],
                               ),
-                            ),
-                          ),
-                        ),
+                            )),
                       ],
                     ),
                   ),
-                ]
+                ),
+              ),
             );
           }
       ),
@@ -1089,209 +1111,225 @@ class _ModifyChannelState extends State<ModifyChannel> {
               );
             }
 //          _icon = Icons.check_circle;
-            return CupertinoScrollbar(
-              child: SingleChildScrollView(
-                child: Container(
+            return Center(
+              child: CupertinoScrollbar(
+                child: SingleChildScrollView(
+                  child: Container(
 //                  width: MediaQuery.of(context).size.width * 0.9,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.all(10),
-                        child: Center(
-                          child: Text(
-                            'Keys Category',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: Center(
+                            child: Text(
+                              'Keys Category',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: (MediaQuery.of(context).size.width>1000)?30:15),
+                            ),
                           ),
                         ),
-                      ),
-                      Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(0.0),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment
-                                      .spaceEvenly,
-                                  children: <Widget>[
-                                    Column(
-                                      children: <Widget>[
-                                        //S90ES
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[35]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[35]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //Motif
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[32]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[32]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //Triton
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[50]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[50]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_key_1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[54]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[54]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_key_2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[55]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[55]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      children: <Widget>[
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[9]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[9]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[6]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[6]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[24]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[24]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_key_1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[54]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[54]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_key_2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[55]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[55]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment
-                                          .start,
-                                      crossAxisAlignment: CrossAxisAlignment
-                                          .start,
-                                      children: <Widget>[
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[9]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[9]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[6]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[6]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[24]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[24]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_key_1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[54]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[54]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_key_2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[55]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[55]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
+                        Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(0.0),
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment
+                                        .spaceEvenly,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          //S90ES
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[35]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[35]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Motif
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[32]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[32]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Triton
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[50]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[50]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_key_1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[54]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[54]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_key_2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[55]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[55]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: <Widget>[
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[9]['In'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[9]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[6]['In'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[6]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[24]['In'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[24]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_key_1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[54]['In'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[54]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_key_2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[55]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[55]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment: MainAxisAlignment
+                                            .start,
+                                        crossAxisAlignment: CrossAxisAlignment
+                                            .start,
+                                        children: <Widget>[
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[9]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[9]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[6]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[6]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[24]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[24]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_key_1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[54]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[54]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_key_2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[55]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[55]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
 //                                Text('인도자 : ${widget.name}'),
 //                                IconButton(
 //                                  icon: Icon(
@@ -1307,12 +1345,13 @@ class _ModifyChannelState extends State<ModifyChannel> {
 ////                                    );
 //                                  },
 //                                )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )),
-                    ],
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            )),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -1338,364 +1377,395 @@ class _ModifyChannelState extends State<ModifyChannel> {
               );
             }
 //          _icon = Icons.check_circle;
-            return CupertinoScrollbar(
-              child: SingleChildScrollView(
-                child: Container(
+            return Center(
+              child: CupertinoScrollbar(
+                child: SingleChildScrollView(
+                  child: Container(
 //                  width: MediaQuery.of(context).size.width * 0.9,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.all(10),
-                        child: Center(
-                          child: Text(
-                            'Drum Category',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: Center(
+                            child: Text(
+                              'Drum Category',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: (MediaQuery.of(context).size.width>1000)?30:15),
+                            ),
                           ),
                         ),
-                      ),
-                      Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(0.0),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment
-                                      .spaceEvenly,
-                                  children: <Widget>[
-                                    Column(
-                                      children: <Widget>[
-                                        //Kick
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[31]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[31]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //Snare
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[46]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[46]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //Hi-Hat
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[30]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[30]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //Tom1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[47]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[47]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //Tom2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[48]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[48]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //Tom3
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[49]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[49]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //OH L
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[33]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[33]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //OH R
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[34]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[34]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_drum_1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[56]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[56]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_drum_2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(snapshot.data
-                                              .documents[57]['name']),
-                                            onPressed: () {
-                                              updateDialogName(context,
-                                                  snapshot.data.documents[57]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      children: <Widget>[
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[5]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[5]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[20]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[20]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[4]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[4]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[21]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[21]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[22]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[22]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[23]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[23]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[7]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[7]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[8]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[8]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_drum_1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[56]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[56]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_drum_2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[57]['In']),
-                                            onPressed: () {
-                                              updateDialogIn(context,
-                                                  snapshot.data.documents[57]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment
-                                          .start,
-                                      crossAxisAlignment: CrossAxisAlignment
-                                          .start,
-                                      children: <Widget>[
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[5]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[5]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[20]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[20]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[4]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[4]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[21]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[21]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[22]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[22]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[23]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[23]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[7]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[7]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[8]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[8]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_drum_1
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[56]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[56]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                        //spare_drum_2
-                                        Container(
-                                          width: size.width * 0.25,
-                                          child: FlatButton(child: Text(
-                                              snapshot.data.documents[57]['Out']),
-                                            onPressed: () {
-                                              updateDialogOut(context,
-                                                  snapshot.data.documents[57]
-                                                      .documentID);
-                                            },),
-                                        ),
-                                      ],
-                                    ),
+                        Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(0.0),
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment
+                                        .spaceEvenly,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          //Kick
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[31]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[31]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Snare
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[46]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[46]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Hi-Hat
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[30]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[30]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Tom1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[47]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[47]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Tom2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[48]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[48]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //Tom3
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[49]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[49]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //OH L
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[33]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[33]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //OH R
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[34]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[34]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_drum_1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[56]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[56]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_drum_2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(snapshot.data
+                                                .documents[57]['name'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogName(context,
+                                                    snapshot.data.documents[57]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: <Widget>[
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[5]['In'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[5]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[20]['In'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[20]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[4]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[4]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[21]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[21]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[22]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[22]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[23]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[23]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[7]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[7]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[8]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[8]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_drum_1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[56]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[56]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_drum_2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[57]['In'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogIn(context,
+                                                    snapshot.data.documents[57]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment: MainAxisAlignment
+                                            .start,
+                                        crossAxisAlignment: CrossAxisAlignment
+                                            .start,
+                                        children: <Widget>[
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[5]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[5]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[20]['Out'],
+                                              textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[20]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[4]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[4]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[21]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[21]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[22]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[22]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[23]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[23]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[7]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[7]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[8]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[8]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_drum_1
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[56]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[56]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                          //spare_drum_2
+                                          Container(
+                                            width: size.width * 0.25,
+                                            child: FlatButton(child: Text(
+                                                snapshot.data.documents[57]['Out'],
+                                            textScaleFactor: (MediaQuery.of(context).size.width>1000)?2:0.9,),
+                                              onPressed: () {
+                                                updateDialogOut(context,
+                                                    snapshot.data.documents[57]
+                                                        .documentID);
+                                              },),
+                                          ),
+                                        ],
+                                      ),
 //                                Text('인도자 : ${widget.name}'),
 //                                IconButton(
 //                                  icon: Icon(
@@ -1711,12 +1781,13 @@ class _ModifyChannelState extends State<ModifyChannel> {
 ////                                    );
 //                                  },
 //                                )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )),
-                    ],
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            )),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -1834,12 +1905,12 @@ class _ModifyChannelState extends State<ModifyChannel> {
         resizeToAvoidBottomPadding: false,
         extendBodyBehindAppBar: false,
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.amber,
             onTap: _onItemTapped,
             currentIndex: _selectedIndex,
-            backgroundColor: Colors.amber,
             type: BottomNavigationBarType.shifting,
             unselectedItemColor: Colors.black,
-            selectedItemColor: Colors.amber,
+            selectedItemColor: Colors.black,
 //          onTap: _onItemTapped,
 //          currentIndex: _selectedIndex,
             items: <BottomNavigationBarItem>[

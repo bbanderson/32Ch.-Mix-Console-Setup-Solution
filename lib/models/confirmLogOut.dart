@@ -42,7 +42,6 @@ class _ConfirmLogOutState extends State<ConfirmLogOut> {
             print('pressed LogOut');
               Navigator.pop(context);
               Navigator.pop(context);
-              Navigator.pop(context);
             await FirebaseAuth.instance.signOut();
           },
         ),

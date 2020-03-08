@@ -84,8 +84,8 @@ flutter:
     - assets/help/6_login.png
     - assets/help/7_forgetpw.png
     - assets/help/8_sent.png
-    - assets/help/mod/1_init.png
-    - assets/help/mod/2_drum.png
+    - assets/help/mod/1_init_mod.png
+    - assets/help/mod/2_drum_mod.png
     - assets/help/mod/3_name.png
     - assets/help/mod/4_named.png
     - assets/help/mod/5_changed.png
@@ -113,6 +113,9 @@ flutter:
         - asset: fonts/qn_bold.otf
         - asset: fonts/qn_light.otf
         - asset: fonts/qn_medium.otf
+    - family: sn
+      fonts:
+        - asset: fonts/snell.ttc
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

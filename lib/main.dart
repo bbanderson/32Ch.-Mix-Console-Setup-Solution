@@ -7,16 +7,19 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Rejoice 채널표',
-      theme: ThemeData(
-          primarySwatch: Colors.amber,
-          primaryColor: Colors.amber,
-          primaryColorBrightness: Brightness.light,
-          fontFamily: 'qn'
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: MaterialApp(
+        title: '32nd',
+        theme: ThemeData(
+            primarySwatch: Colors.amber,
+            primaryColor: Colors.amber,
+            primaryColorBrightness: Brightness.light,
+            fontFamily: 'qn'
+        ),
+        debugShowCheckedModeBanner: false,
+        home: Channel(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: Channel(),
     );
   }
 }

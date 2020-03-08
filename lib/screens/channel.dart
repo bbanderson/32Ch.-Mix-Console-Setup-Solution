@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -81,9 +82,9 @@ class _ChannelState extends State<Channel> {
 
   _showSnackBar() {
     final snackBar = SnackBar(
-      content: Text('채널을 수정하려면 로그인이 필요합니다.', style: TextStyle(fontFamily: 'qn'),),
+      content: Text('채널을 수정하려면 로그인이 필요합니다.', style: TextStyle(fontFamily: 'qn', fontSize: (MediaQuery.of(context).size.width>1000)?30:15),),
       action: SnackBarAction(
-        label: '로그인',
+        label: '로그인하기',
         onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => AuthPage()));
@@ -205,7 +206,7 @@ class _ChannelState extends State<Channel> {
                           width: size.width * 0.35 * 0.3,
                           height: 30,
                           child: IconButton(
-                            iconSize: 17,
+                            iconSize: (MediaQuery.of(context).size.width>1000)?30:17,
                             padding: EdgeInsets.all(0),
                             icon: Icon(Icons.settings, color: Colors.grey[850],),
 //                            iconSize: 17,
@@ -218,7 +219,7 @@ class _ChannelState extends State<Channel> {
                         width: size.width * 0.35 * 0.3,
                         height: 30,
                         child: IconButton(
-                          iconSize: 17,
+                          iconSize: (MediaQuery.of(context).size.width>1000)?30:17,
                           padding: EdgeInsets.all(0),
 //                          iconSize: 17,
                           icon: Icon(Icons.help, color: Colors.grey[850],),
@@ -250,9 +251,9 @@ class _ChannelState extends State<Channel> {
               ),
             ),
             Text(
-              '채널표',
+              '32nd',
 //              textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 0.5),
+              style: TextStyle(fontFamily: 'sn',fontWeight: FontWeight.bold, letterSpacing: 0.5, fontSize: (MediaQuery.of(context).size.width>1000)?40:30),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
@@ -276,6 +277,7 @@ class _ChannelState extends State<Channel> {
                               child: Text(
                                 currentChannel,
                                 style: TextStyle(
+                                    fontSize:(MediaQuery.of(context).size.width>1000)?30:15,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.amber[900]),
                               )))),
@@ -305,7 +307,8 @@ class _ChannelState extends State<Channel> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Container(
-                      width: size.width * 0.2,
+                      height: size.height * 0.08,
+                      width: size.width * 0.22,
                       child: RaisedButton(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40)),
@@ -315,7 +318,7 @@ class _ChannelState extends State<Channel> {
                         splashColor: Colors.amber[200],
                         child: Text(
                           'Singer',
-                          style: TextStyle(fontSize: 10.5),
+                          style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:10.5),
                         ),
                         onPressed: () {
                           context:
@@ -336,7 +339,8 @@ class _ChannelState extends State<Channel> {
                       ),
                     ),
                     Container(
-                      width: size.width * 0.2,
+                      height: size.height * 0.08,
+                      width: size.width * 0.22,
                       child: RaisedButton(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40)),
@@ -346,7 +350,7 @@ class _ChannelState extends State<Channel> {
                           splashColor: Colors.amber[200],
                           child: Text(
                             'Guitar',
-                            style: TextStyle(fontSize: 10.5),
+                            style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:10.5),
                           ),
                           onPressed: () {
                             _onItemTapped(1);
@@ -364,7 +368,8 @@ class _ChannelState extends State<Channel> {
                           }),
                     ),
                     Container(
-                      width: size.width * 0.2,
+                      height: size.height * 0.08,
+                      width: size.width * 0.22,
                       child: RaisedButton(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40)),
@@ -374,7 +379,7 @@ class _ChannelState extends State<Channel> {
                           splashColor: Colors.amber[200],
                           child: Text(
                             'Keys',
-                            style: TextStyle(fontSize: 10.5),
+                            style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:10.5),
                           ),
                           onPressed: () {
                             _onItemTapped(2);
@@ -392,7 +397,8 @@ class _ChannelState extends State<Channel> {
                           }),
                     ),
                     Container(
-                      width: size.width * 0.2,
+                      height: size.height * 0.08,
+                      width: size.width * 0.22,
                       child: RaisedButton(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40)),
@@ -402,7 +408,7 @@ class _ChannelState extends State<Channel> {
                           splashColor: Colors.amber[200],
                           child: Text(
                             'Drum',
-                            style: TextStyle(fontSize: 10.5),
+                            style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:10.5),
                           ),
                           onPressed: () {
                             _onItemTapped(3);
@@ -422,13 +428,13 @@ class _ChannelState extends State<Channel> {
                   ],
                 ),
               ),
-//              SizedBox(
+              SizedBox(
 //                child: Container(
 //                  color: Colors.grey[300],
 //                  margin: EdgeInsets.all(0),
 //                ),
-//                height: size.height * 0.001,
-//              ),
+                height: size.height * 0.02,
+              ),
               Stack(
                 children: <Widget>[Container(
 //                color: Colors.black,
@@ -486,7 +492,7 @@ class _ChannelState extends State<Channel> {
                         children: <Widget>[
                           Text(
                             'INPUT\n(롤에 꽂는 그림)',
-                            style: TextStyle(color: mainFontColor),
+                            style: TextStyle(color: mainFontColor, fontSize: (MediaQuery.of(context).size.width>1000)?30:14),
                             textAlign: TextAlign.center,
                           ),
                           Container(
@@ -502,7 +508,7 @@ class _ChannelState extends State<Channel> {
                                   Text(
                                     input,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(color:mainFontColor),
+                                    style: TextStyle(color:mainFontColor, fontSize: (MediaQuery.of(context).size.width>1000)?30:14),
                                   ),
                                 ],
                               ),
@@ -516,6 +522,7 @@ class _ChannelState extends State<Channel> {
 //                              color: Colors.red,
 //                            ),
                           Container(
+                            width: (MediaQuery.of(context).size.width>1000)?size.width * 0.5:size.width * 0.2,
                             height: size.height * 0.07,
                             child: Image.asset(
                               'assets/xlr_m.png',
@@ -540,7 +547,7 @@ class _ChannelState extends State<Channel> {
                         children: <Widget>[
                           Text(
                             'MONITOR\n(롤에 꽂는 그림)',
-                            style: TextStyle(color: mainFontColor),
+                            style: TextStyle(color: mainFontColor, fontSize: (MediaQuery.of(context).size.width>1000)?30:14),
                             textAlign: TextAlign.center,
                           ),
                           Container(
@@ -551,7 +558,7 @@ class _ChannelState extends State<Channel> {
                                   Text(
                                     monitor,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(color:mainFontColor),
+                                    style: TextStyle(color:mainFontColor, fontSize: (MediaQuery.of(context).size.width>1000)?30:14),
                                   ),
                                 ],
                               ),
@@ -564,6 +571,7 @@ class _ChannelState extends State<Channel> {
                             height: size.height * 0.2 * 0.5,
                           ),
                           Container(
+                            width: (MediaQuery.of(context).size.width>1000)?size.width * 0.5:size.width * 0.2,
                             height: size.height * 0.07,
                             child: Image.asset(
                               'assets/xlr_f.png',
@@ -667,8 +675,7 @@ class _ChannelState extends State<Channel> {
                       child: ListTile(
                           leading: Image.asset(
                             'assets/icons/leader.png',
-                            width: 40,
-                            height: 40,
+                            width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                             color: Colors.grey[850],
                           ),
 //                trailing: Image.asset(
@@ -678,9 +685,9 @@ class _ChannelState extends State<Channel> {
 //                ),
                           title: Text(
                             snapshot.data.documents[51]['name'],
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                           ),
-                          subtitle: Text('Mic : Singer Box'),
+                          subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                           onTap: () {
                             _showResult(snapshot.data.documents[25]['In'],
                                 snapshot.data.documents[25]['Out']);
@@ -719,8 +726,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -730,9 +736,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[36]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[10]['In'],
                           snapshot.data.documents[10]['Out']);
@@ -745,8 +751,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -756,9 +761,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[38]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[12]['In'],
                           snapshot.data.documents[12]['Out']);
@@ -771,8 +776,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -782,9 +786,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[39]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[13]['In'],
                           snapshot.data.documents[13]['Out']);
@@ -797,8 +801,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -808,9 +811,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[40]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[14]['In'],
                           snapshot.data.documents[14]['Out']);
@@ -823,8 +826,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -834,9 +836,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[41]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[15]['In'],
                           snapshot.data.documents[15]['Out']);
@@ -849,8 +851,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -860,9 +861,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[42]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[16]['In'],
                           snapshot.data.documents[16]['Out']);
@@ -875,8 +876,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -886,9 +886,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[43]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[17]['In'],
                           snapshot.data.documents[17]['Out']);
@@ -901,8 +901,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -912,9 +911,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[44]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[18]['In'],
                           snapshot.data.documents[18]['Out']);
@@ -927,8 +926,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -938,9 +936,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[45]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[19]['In'],
                           snapshot.data.documents[19]['Out']);
@@ -953,8 +951,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/singer.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -964,9 +961,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[37]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Singer Box'),
+                    subtitle: Text('Mic : Singer Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[11]['In'],
                           snapshot.data.documents[11]['Out']);
@@ -978,7 +975,7 @@ class _ChannelState extends State<Channel> {
                     }),
               ],
 //              magnification: 2,
-              itemExtent: 60.0,
+              itemExtent: (MediaQuery.of(context).size.width>1000)?100:60.0,
             ),
           );
         });
@@ -1141,8 +1138,7 @@ class _ChannelState extends State<Channel> {
                   child: ListTile(
                       leading: Image.asset(
                         'assets/icons/eg1.png',
-                        width: 35,
-                        height: 35,
+                width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                         color: Colors.grey[850],
                       ),
 //                trailing: Image.asset(
@@ -1152,9 +1148,9 @@ class _ChannelState extends State<Channel> {
 //                ),
                       title: Text(
                         snapshot.data.documents[28]['name'],
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                       ),
-                      subtitle: Text('Mic : SM57'),
+                      subtitle: Text('Mic : SM57', style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                       onLongPress: () {},
                       onTap: () {
                         _showResult(snapshot.data.documents[2]['In'],
@@ -1171,8 +1167,7 @@ class _ChannelState extends State<Channel> {
                   child: ListTile(
                       leading: Image.asset(
                         'assets/icons/eg2.png',
-                        width: 28,
-                        height: 28,
+          width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                         color: Colors.grey[850],
                       ),
 //              trailing: Image.asset(
@@ -1182,9 +1177,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                       title: Text(
                         snapshot.data.documents[29]['name'],
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                       ),
-                      subtitle: Text('Mic : SM57'),
+                      subtitle: Text('Mic : SM57', style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                       onTap: () {
                         _showResult(snapshot.data.documents[3]['In'],
                             snapshot.data.documents[3]['Out']);
@@ -1200,8 +1195,7 @@ class _ChannelState extends State<Channel> {
                   child: ListTile(
                       leading: Image.asset(
                         'assets/icons/bass.png',
-                        width: 33,
-                        height: 33,
+          width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       ),
 //              trailing: Image.asset(
 //                'assets/loading.gif',
@@ -1210,9 +1204,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                       title: Text(
                         snapshot.data.documents[27]['name'],
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                       ),
-                      subtitle: Text('Connect to amp'),
+                      subtitle: Text('Connect to amp', style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                       onTap: () {
                         _showResult(snapshot.data.documents[1]['In'],
                             snapshot.data.documents[1]['Out']);
@@ -1228,8 +1222,7 @@ class _ChannelState extends State<Channel> {
                   child: ListTile(
                       leading: Image.asset(
                         'assets/icons/ag.png',
-                        width: 33,
-                        height: 33,
+          width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       ),
 //              trailing: Image.asset(
 //                'assets/loading.gif',
@@ -1238,11 +1231,11 @@ class _ChannelState extends State<Channel> {
 //              ),
                       title: Text(
                         snapshot.data.documents[26]['name'],
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                       ),
                       subtitle: Text(
                         '사용자 있을 시 결정',
-//                style: TextStyle(fontSize: 10),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),
                       ),
                       onTap: () {
                         _showResult(snapshot.data.documents[0]['In'],
@@ -1259,8 +1252,7 @@ class _ChannelState extends State<Channel> {
                   child: ListTile(
                       leading: Image.asset(
                         'assets/icons/spare.png',
-                        width: 33,
-                        height: 33,
+          width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                         color: Colors.grey[850],
                       ),
 //              trailing: Image.asset(
@@ -1270,11 +1262,11 @@ class _ChannelState extends State<Channel> {
 //              ),
                       title: Text(
                         snapshot.data.documents[52]['name'],
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                       ),
                       subtitle: Text(
                         '추가해서 사용하세요.',
-//                style: TextStyle(fontSize: 10),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),
                       ),
                       onTap: () {
                         _showResult(snapshot.data.documents[52]['In'],
@@ -1291,8 +1283,7 @@ class _ChannelState extends State<Channel> {
                   child: ListTile(
                       leading: Image.asset(
                         'assets/icons/spare.png',
-                        width: 33,
-                        height: 33,
+          width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                         color: Colors.grey[850],
                       ),
 //              trailing: Image.asset(
@@ -1302,11 +1293,11 @@ class _ChannelState extends State<Channel> {
 //              ),
                       title: Text(
                         snapshot.data.documents[53]['name'],
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                       ),
                       subtitle: Text(
                         '추가해서 사용하세요.',
-//                style: TextStyle(fontSize: 10),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),
                       ),
                       onTap: () {
                         _showResult(snapshot.data.documents[53]['In'],
@@ -1320,7 +1311,7 @@ class _ChannelState extends State<Channel> {
                 ),
               ],
 //              magnification: 2,
-              itemExtent: 60.0,
+              itemExtent: (MediaQuery.of(context).size.width>1000)?100:60.0,
             ),
           );
         });
@@ -1350,7 +1341,7 @@ class _ChannelState extends State<Channel> {
               children: <Widget>[
                 ListTile(
                     leading: Image.asset(
-                      'assets/icons/s90es.png', width: 30, height: 30,
+                      'assets/icons/s90es.png', width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
 //            color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1360,9 +1351,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[35]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('DI : Green'),
+                    subtitle: Text('DI : Green', style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[9]['In'],
                           snapshot.data.documents[9]['Out']);
@@ -1375,8 +1366,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/motif.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1386,9 +1376,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[32]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('DI : Green'),
+                    subtitle: Text('DI : Green', style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[6]['In'],
                           snapshot.data.documents[6]['Out']);
@@ -1401,8 +1391,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/triton.png',
-                      width: 29,
-                      height: 29,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1412,9 +1401,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[50]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('DI : Silver'),
+                    subtitle: Text('DI : Silver', style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[24]['In'],
                           snapshot.data.documents[24]['Out']);
@@ -1427,8 +1416,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/spare.png',
-                      width: 33,
-                      height: 33,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1438,11 +1426,11 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[54]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
                     subtitle: Text(
                       '추가해서 사용하세요.',
-//                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),
                     ),
                     onTap: () {
                       _showResult(snapshot.data.documents[54]['In'],
@@ -1456,8 +1444,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/spare.png',
-                      width: 33,
-                      height: 33,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1467,11 +1454,11 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[55]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
                     subtitle: Text(
                       '추가해서 사용하세요.',
-//                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),
                     ),
                     onTap: () {
                       _showResult(snapshot.data.documents[55]['In'],
@@ -1483,7 +1470,7 @@ class _ChannelState extends State<Channel> {
                       print('spare_keys_2 Button is clicked.');
                     }),
               ],
-              itemExtent: 60.0,
+              itemExtent: (MediaQuery.of(context).size.width>1000)?100:60.0,
             ),
           );
         });
@@ -1516,8 +1503,7 @@ class _ChannelState extends State<Channel> {
                   child: ListTile(
                       leading: Image.asset(
                         'assets/icons/kick.png',
-                        width: 30,
-                        height: 30,
+                        width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                         color: Colors.grey[850],
                       ),
 //                trailing: Image.asset(
@@ -1527,9 +1513,9 @@ class _ChannelState extends State<Channel> {
 //                ),
                       title: Text(
                         snapshot.data.documents[31]['name'],
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                       ),
-                      subtitle: Text('Mic : SHURE Box'),
+                      subtitle: Text('Mic : SHURE Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                       onTap: () {
                         _showResult(snapshot.data.documents[5]['In'],
                             snapshot.data.documents[5]['Out']);
@@ -1543,8 +1529,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/snare.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1554,9 +1539,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[46]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : Beta 87A'),
+                    subtitle: Text('Mic : Beta 87A',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[20]['In'],
                           snapshot.data.documents[20]['Out']);
@@ -1569,8 +1554,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/hihat.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1580,9 +1564,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[30]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : SHURE Box'),
+                    subtitle: Text('Mic : SHURE Box',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[4]['In'],
                           snapshot.data.documents[4]['Out']);
@@ -1595,8 +1579,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/t1.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1606,9 +1589,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[47]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : SHURE Box - Mini'),
+                    subtitle: Text('Mic : SHURE Box - Mini',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[21]['In'],
                           snapshot.data.documents[21]['Out']);
@@ -1621,8 +1604,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/t2.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1632,9 +1614,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[48]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : SHURE Box - Mini'),
+                    subtitle: Text('Mic : SHURE Box - Mini',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[22]['In'],
                           snapshot.data.documents[22]['Out']);
@@ -1647,8 +1629,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/t3.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1658,9 +1639,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[49]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : SHURE Box - Mini'),
+                    subtitle: Text('Mic : SHURE Box - Mini',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[23]['In'],
                           snapshot.data.documents[23]['Out']);
@@ -1673,8 +1654,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/ohr.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1684,9 +1664,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[33]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : SHURE Box,\nDrummer가 앉은 기준으로 왼쪽'),
+                    subtitle: Text('Mic : SHURE Box,\nDrummer가 앉은 기준으로 왼쪽',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[7]['In'],
                           snapshot.data.documents[7]['Out']);
@@ -1699,8 +1679,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/ohl.png',
-                      width: 30,
-                      height: 30,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1710,9 +1689,9 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[34]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
-                    subtitle: Text('Mic : SHURE Box,\nDrummer가 앉은 기준으로 오른쪽'),
+                    subtitle: Text('Mic : SHURE Box,\nDrummer가 앉은 기준으로 오른쪽',style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),),
                     onTap: () {
                       _showResult(snapshot.data.documents[8]['In'],
                           snapshot.data.documents[8]['Out']);
@@ -1725,8 +1704,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/spare.png',
-                      width: 33,
-                      height: 33,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1736,11 +1714,11 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[56]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
                     subtitle: Text(
                       '추가해서 사용하세요.',
-//                style: TextStyle(fontSize: 10),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),
                     ),
                     onTap: () {
                       _showResult(snapshot.data.documents[56]['In'],
@@ -1754,8 +1732,7 @@ class _ChannelState extends State<Channel> {
                 ListTile(
                     leading: Image.asset(
                       'assets/icons/spare.png',
-                      width: 33,
-                      height: 33,
+                      width: (MediaQuery.of(context).size.width>1000)?60:30, height: (MediaQuery.of(context).size.width>1000)?60:30,
                       color: Colors.grey[850],
                     ),
 //              trailing: Image.asset(
@@ -1765,11 +1742,11 @@ class _ChannelState extends State<Channel> {
 //              ),
                     title: Text(
                       snapshot.data.documents[57]['name'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:20),
                     ),
                     subtitle: Text(
                       '추가해서 사용하세요.',
-//                style: TextStyle(fontSize: 10),
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),
                     ),
                     onTap: () {
                       _showResult(snapshot.data.documents[57]['In'],
@@ -1781,7 +1758,7 @@ class _ChannelState extends State<Channel> {
                       print('spare_drum_2 Button is clicked.');
                     }),
               ],
-              itemExtent: 60.0,
+              itemExtent: (MediaQuery.of(context).size.width>1000)?100:60,
             ),
           );
         });

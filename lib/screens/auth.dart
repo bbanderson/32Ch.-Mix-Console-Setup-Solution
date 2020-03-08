@@ -69,12 +69,12 @@ class _AuthPageState extends State<AuthPage> {
 //                                  color: Colors.amber,
                                   margin:
                                   EdgeInsets.only(top: size.height * 0.05),
-                                  height: size.height * 0.05,
+                                  height: (MediaQuery.of(context).size.width>1000)?size.height*0.07:size.height * 0.05,
 //                                  color: Colors.amber,
                                   child: Text(
                                     '채널표 수정',
                                     textAlign: TextAlign.center,
-                                    textScaleFactor: 2,
+                                    textScaleFactor: (MediaQuery.of(context).size.width>1000)?4:2,
                                   ),
                                 ),
                               ),
@@ -112,7 +112,7 @@ class _AuthPageState extends State<AuthPage> {
                         ),
                         Container(
                           height: size.height * 0.03,
-                          child: FlatButton(child: Text('비밀번호를 잊으셨나요?', style: TextStyle(fontSize: 10),), onPressed: (){
+                          child: FlatButton(child: Text('비밀번호를 잊으셨나요?', style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?20:10),), onPressed: (){
                             _showForgetPwCupertinoDialog(context);
                           },),
                         ),
@@ -152,14 +152,19 @@ class _AuthPageState extends State<AuthPage> {
                         elevation: 0,
                         child: Text(
                           '채널표 수정에 오신 것을 환영합니다!\n무분별한 수정으로 인한 혼란 방지 및 보안을 위해 부여받은 계정으로 로그인 해주시기 바랍니다.',
+                          style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:14),
 //                          textAlign: TextAlign.center,
                         ),
                       )),
+                  SizedBox(height: (MediaQuery.of(context).size.width>1000)?50:0,),
                   Container(
                     margin: EdgeInsets.only(top: 10),
                     child: TextFormField(
+                      style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:14),
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
+                        errorStyle: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:14,),
+                          labelStyle: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:14,),
                           icon: Icon(Icons.account_circle),
                           labelText: '이메일',
                           hintText: '관리자 전용 email'),
@@ -172,12 +177,15 @@ class _AuthPageState extends State<AuthPage> {
                       controller: _idController,
                     ),
                   ),
+                  SizedBox(height: (MediaQuery.of(context).size.width>1000)?50:0,),
                   TextFormField(
-                    style: TextStyle(fontFamily: ''),
+                    style: TextStyle(fontFamily: '',fontSize: (MediaQuery.of(context).size.width>1000)?30:14),
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: true,
                     controller: _passwordController,
                     decoration: InputDecoration(
+                      errorStyle: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:14,),
+                      labelStyle: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:14,),
                       icon: Icon(Icons.vpn_key),
                       labelText: '비밀번호',
                       hintText: '비밀번호를 입력해주세요!',
@@ -207,7 +215,7 @@ class _AuthPageState extends State<AuthPage> {
         child: RaisedButton(
           child: Text(
             'Log In',
-            style: TextStyle(fontSize: 20, color: Colors.black),
+            style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?35:20, color: Colors.black),
           ),
           color: Colors.amber[200],
           shape:
@@ -229,7 +237,7 @@ class _AuthPageState extends State<AuthPage> {
       height: size.height * 0.06,
       child: RaisedButton(
           child: Text('돌아가기',
-            style: TextStyle(fontSize: 15, color: Colors.black),
+            style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:15, color: Colors.black),
           ),
           shape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
@@ -297,6 +305,7 @@ class _AuthPageState extends State<AuthPage> {
                 child: AutoSizeText(
                   _error,
                   maxLines: 3,
+                  style: TextStyle(fontSize: (MediaQuery.of(context).size.width>1000)?30:14,),
                 ),
               ),
               IconButton(
